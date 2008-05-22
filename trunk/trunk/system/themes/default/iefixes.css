@@ -1,0 +1,4 @@
+/* TYPOlight IE back end CSS file */
+* html .block, * html .tl_content { zoom:1; }
+.toggleWrap { cursor:hand; }
+#tl_ajaxOverlay { filter:alpha(opacity=30); }
