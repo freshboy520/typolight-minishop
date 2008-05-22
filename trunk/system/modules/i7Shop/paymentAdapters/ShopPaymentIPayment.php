@@ -1,6 +1,6 @@
 <?
 
-class iPayment {
+class ShopPaymentIPayment {
 	
 	public $debug = 1;
 	
