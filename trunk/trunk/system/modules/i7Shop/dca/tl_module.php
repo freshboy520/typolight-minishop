@@ -34,15 +34,15 @@
 
 $GLOBALS['BE_FFL']['i7shopCategorieTree'] = "i7shopCategorieTree";
 		
-$GLOBALS['TL_DCA']['tl_module']['palettes']['i7Shop'] = "name,type,i7shop_shopsystem,i7shop_template,i7shop_defineRootCategorie";
-$GLOBALS['TL_DCA']['tl_module']['palettes']['i7ShopBasketInfo'] = "name,type,i7shop_shopsystem,i7shop_basket_info_always_visible,jumpTo,i7shop_hide_on_page";
+$GLOBALS['TL_DCA']['tl_module']['palettes']['i7shop'] = "name,type,i7shop_shopsystem,i7shop_template,i7shop_defineRootCategorie";
+$GLOBALS['TL_DCA']['tl_module']['palettes']['i7shopBasketInfo'] = "name,type,i7shop_shopsystem,i7shop_basket_info_always_visible,jumpTo,i7shop_hide_on_page";
 
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['i7shop_shopsystem'] = array(
 	'label'                   => &$GLOBALS['TL_LANG']['i7SHOP']['i7shop_shopsystem'],
 	'exclude'                 => true,
 	'inputType'               => 'select',
-	'foreignKey'              => 'tl_i7Shop.name'
+	'foreignKey'              => 'tl_i7shop.name'
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['i7shop_basket_info_always_visible'] = array(
