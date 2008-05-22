@@ -42,12 +42,12 @@
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['tl_module']['i7shop_template'] = "Template";
-$GLOBALS['TL_LANG']['tl_module']['rootPage'] = "Template";
+$GLOBALS['TL_LANG']['tl_module']['i7shop_template'] = array("Template",'');
+$GLOBALS['TL_LANG']['tl_module']['rootPage'] = array("Template",'');
 
 $GLOBALS['TL_LANG']['MOD']['i7shop_customer'] = array('Kunden', 'Mit diesem Modul können Sie die verschiedenen Kunden des i7 Shops verwalten.');
 $GLOBALS['TL_LANG']['MOD']['i7shop_order'] = array('Orders', 'Mit diesem Modul können Sie die verschiedenen Bestellungen des i7 Shops verwalten.');
-$GLOBALS['TL_LANG']['MOD']['i7shop'] = array('Shopsystems (off)', '');
+$GLOBALS['TL_LANG']['MOD']['i7shop'] = array('Shopsystems', '');
 $GLOBALS['TL_LANG']['MOD']['i7shop_articletree'] = array('Articletree', 'Mit diesem Modul können den Artikelbaum bearbeiten.');
 $GLOBALS['TL_LANG']['MOD']['shop'] = "Onlineshop";
 
