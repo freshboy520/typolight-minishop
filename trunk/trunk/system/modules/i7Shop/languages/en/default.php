@@ -71,6 +71,8 @@ $GLOBALS['TL_LANG']['i7SHOP']['ccv']		= 'CCV Verification on back side of your c
 
 $GLOBALS['TL_LANG']['i7SHOP']['termsaccepted']		= 'I accept the terms and conditions';
 
+$GLOBALS['TL_LANG']['i7SHOP']['PAYMENT_PREPAY']			= "Prepay";
+
 
 // TEMPLATS
 // BASKET

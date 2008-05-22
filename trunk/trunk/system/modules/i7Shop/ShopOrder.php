@@ -174,9 +174,15 @@ class ShopOrder {
 	 **/
 	public function getFormatedPaymentDetails()
 	{
-		$text = "card type: ".$this->paymentDetails['cctype']."<br />\n";
-		$text .= "cardnumber: ".$this->paymentDetails['ccnumber']."<br />\n";
-		$text .= "name: ".$this->paymentDetails['ccname']."<br />\n";
+		if($this->paymentDetails['payment'] == 'cc') {
+			$text = $GLOBALS['TL_LANG']['i7SHOP']['cctype'].": ".$this->paymentDetails['cctype']."<br />\n";
+			$text .= $GLOBALS['TL_LANG']['i7SHOP']['ccnumber'].": ".$this->paymentDetails['ccnumber']."<br />\n";
+			$text .= $GLOBALS['TL_LANG']['i7SHOP']['ccname'].": ".$this->paymentDetails['ccname']."<br />\n";			
+		}
+		else {
+			$text = $GLOBALS['TL_LANG']['i7SHOP']['PAYMENT_PREPAY'];
+		}
+
 		
 		return $text;
 	}
@@ -271,8 +277,16 @@ class ShopOrder {
 	
 	
 	public function payOrder($params) {
-		require_once("paymentAdapters/".$this->paymentAdapter.".php");
-		$paymentProcess = new $this->paymentAdapter;
+		
+		if($params['payment'] == "cc"){
+			$paymentAdapter = "ShopPayment".ucfirst($params['paymentCCAdapter']);	
+		}
+		else {
+			$paymentAdapter = "ShopPayment".ucfirst($params['payment']);	
+		}
+		
+		require_once("paymentAdapters/".$paymentAdapter.".php");
+		$paymentProcess = new $paymentAdapter;
 
 		$paymentProcess->debug = false;
 		$paymentProcess->setAccountId($params['payment_account_id']);
@@ -328,8 +342,14 @@ class ShopOrder {
 	
 	
 	
-	static function getPaymentFields($content = array()) {
+	static function getPaymentFields($content = array(), $params=array()) {
 		$years = array();
+		$paymentArray = array('' => $GLOBALS['TL_LANG']['i7SHOP']['ORDER_STEP3_CHOOSE'], 'mastercard' => "Mastercard", 'visacard' => "Visa");
+		
+		if($params['paymentCreditcardTypes']) {
+			$paymentArray = array_merge(array('' => $GLOBALS['TL_LANG']['i7SHOP']['ORDER_STEP3_CHOOSE']), $params['paymentOptions']);
+		}
+		
 		for($i=date("Y");$i<(date("Y")+12); $i++) {
 			
 			$years[] = $i;
@@ -343,7 +363,7 @@ class ShopOrder {
 					'label' => $GLOBALS['TL_LANG']['i7SHOP']['cctype'],
 					'inputType' => 'select',
 					'value' => $content['cctype'],
-					'options' => array('' => $GLOBALS['TL_LANG']['i7SHOP']['ORDER_STEP3_CHOOSE'], 'mastercard' => "Mastercard", 'visacard' => "Visa"),
+					'options' => $paymentArray,
 					'eval' => array('rgxp'=>'alnum', 'mandatory'=>true, 'maxlength'=>64)
 				),
 				'ccnumber' => array

@@ -71,6 +71,8 @@ $GLOBALS['TL_LANG']['i7SHOP']['ccv']		= 'CCV Prüfziffer (auf der Rückseite der
 
 $GLOBALS['TL_LANG']['i7SHOP']['termsaccepted']		= 'Ich akzeptiere die AGB';
 
+$GLOBALS['TL_LANG']['i7SHOP']['PAYMENT_PREPAY']			= "Vorauskasse";
+
 
 // TEMPLATS
 // BASKET
