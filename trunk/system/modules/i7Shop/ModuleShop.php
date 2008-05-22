@@ -343,12 +343,14 @@ class ModuleShop extends BaseShop {
 				
 					// populate fields
 					$populateFields = $order->getPaymentDetails();
-
+					if($populateFields['payment']) $paymentMethode = $populateFields['payment'];
 				}
 				else {
 					$this->redirect($this->getBaseLink()."?a=orderl");
 				}
-			
+				
+				// set payment methode
+				if($this->Input->post('payment')) $paymentMethode = $this->Input->post('payment');
 			
 				$objTemplate = new FrontendTemplate("shoporder_payment");
 				
@@ -362,9 +364,10 @@ class ModuleShop extends BaseShop {
 					$populateFields = array();
 				}
 				
-				$objTemplate->fields = $this->buildWidgets(ShopOrder::getPaymentFields($populateFields), $validate);
+				$objTemplate->fields = $this->buildWidgets(ShopOrder::getPaymentFields($populateFields, $this->getSettings()), $validate);
 				if($validate) {
-					if($this->validateWidgets(ShopOrder::getPaymentFields())) {
+			
+					if($this->validateWidgets(ShopOrder::getPaymentFields()) || ($paymentMethode == "prepay")) {
 						// okay.. prefect
 						
 						$order->setPaymentDetails($_REQUEST); // todo if tl would have a input holder get all
@@ -376,7 +379,10 @@ class ModuleShop extends BaseShop {
 						// jump to order overview
 						$this->redirect($this->getBaseLink()."?a=ordero");
 					}
+					
 				}
+
+				$objTemplate->paymentMethode = $paymentMethode;
 				$objTemplate->back_link = $this->getBaseLink()."?a=order";
 				$objTemplate->formAction = $this->getBaseLink();
 				$this->Template->order = $objTemplate->parse();
@@ -451,7 +457,7 @@ class ModuleShop extends BaseShop {
 						$this->redirect($this->getBaseLink()."?a=orderl");
 					}
 					
-					$suc = $order->payOrder($this->getSettings());
+					$suc = $order->payOrder(array_merge($this->getSettings(), $order->getPaymentDetails()));
 				
 					//$suc = 1;
 				
@@ -476,20 +482,21 @@ class ModuleShop extends BaseShop {
 						$objTemplate->taxPercent = $order->getTaxPercentage();
 						$objTemplate->endtotal = ShopHelpers::makePrice($this->currency, $order->getEndTotal(), $this->currencyFormat);
 
-						$objTemplate->paymentDetails = $order->getFormatedPaymentDetails();
+						$objTemplate->paymentDetails = $order->getPaymentDetails();
 						$objTemplate->billAddress = str_replace("\n", "<br />", $order->getBillAddress());
 						$objTemplate->shipAddress = str_replace("\n", "<br />", $order->getShipAddress());
 						$objTemplate->orderId = $order->getId();
 						
 						$mailtext = $objTemplate->parse();
 						
-						
+		
 						$objEmail = new Email();
 						$objEmail->from = $GLOBALS['TL_ADMIN_EMAIL'];
 						$objEmail->subject = "Order Confirmation (".$order->getId().")";
 						$objEmail->text = $mailtext;
 						$objEmail->sendTo($order->getBillAddress()->getEmail());
 						$objEmail->sendTo($GLOBALS['TL_ADMIN_EMAIL']);
+						
 						
 						$this->clearOrderAndBasket();
 						$this->saveState();

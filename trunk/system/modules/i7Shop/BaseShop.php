@@ -232,6 +232,9 @@ class BaseShop extends Module {
 		$settings['payment_transaction_password'] 		= $this->paymentTransactionPassword;
 		$settings['payment_adminaction_password'] 		= $this->paymentAdminactionPassword;
 		
+		$settings['paymentOptions'] = array('prepay' => $GLOBALS['TL_LANG']['i7SHOP']['PAYMENT_PREPAY'], 'mastercard' => "Mastercard", 'visacard' => "Visa");
+		
+		$settings['paymentCCAdapter'] = "iPayment";
 
 		
 		return $settings;

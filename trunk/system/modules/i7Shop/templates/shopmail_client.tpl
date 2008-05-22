@@ -1,6 +1,6 @@
-Order confirmation Qwstion on-line store
+Order confirmation
 
-Order ID: <? for($i=0; $i<(5-strlen($this->orderId));$i++){echo "0";} echo $this->orderId; ?>
+Order ID: <? echo $this->orderId; ?>
 
 Articles
 ========
@@ -25,9 +25,15 @@ Shipment address:
 <? echo $this->shipAddress; ?>
 <? endif; ?>
 
+<? if($this->paymentDetails['payment'] == "prepay"): ?>
+Please transact the amount of <? echo $this->endtotal; ?> on the bank account: XYZ
+<? else: ?>
+Your order has been successfully billed on your creditcard.
+<? endif; ?>
 
 
-Your order has been successfully billed on your creditcard. Thank you for shopping at qwstion.com, we hope you enjoy your bag!
+
+Thank you for shopping.
 
 -------------------------------------------------
 
