@@ -172,10 +172,10 @@ $GLOBALS['BE_MOD'] = array_merge(array('shop' => $shopArray), $GLOBALS['BE_MOD']
 
 array_insert($GLOBALS['FE_MOD'], 4, array
 (
-	'i7Shop' => array
+	'i7shop' => array
 	(
-		'i7Shop'   => 'ModuleShop',
-		'i7ShopBasketInfo'   => 'ModuleShopBasketInfo',
+		'i7shop'   => 'ModuleShop',
+		'i7shopBasketInfo'   => 'ModuleShopBasketInfo',
 	
 	)
 ));
