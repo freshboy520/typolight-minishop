@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gallery>
+  <config>
+    <title>Campus impressions</title>
+    <slideshow_interval>7</slideshow_interval>
+    <pause_slideshow>false</pause_slideshow>
+  </config>
+  <albums>
+    <album title="Campus impressions" description="" type="typolight" url="tl_files/music_academy/campus"></album>
+  </albums>
+  <language>
+    <string id="please wait" value="Please wait" />
+    <string id="loading" value="Loading..." />
+    <string id="previous page" value="Previous" />
+    <string id="page % of %" value="Page % of %" />
+    <string id="next page" value="Next" />
+  </language>
+</gallery>

@@ -1,0 +1,83 @@
+/* TYPOlight back end install script CSS file */
+body { background:url("images/hbg.jpg"); background-repeat:repeat-x; background-color:#f5f5f5; }
+* html body { margin-left:1px; text-align:center; }
+
+/* Header */ 
+#header { width:756px; margin:18px auto 0px auto; padding:1px; background-color:#ffffff; border:1px solid #bbbbbb; border-bottom:0px; text-align:left; }
+* html #header { width:760px; w\idth:756px; }
+#header h1 { margin:0px; padding:2px 0px 4px 6px; background-color:#b3b6b3; background-image:url("images/headline.gif"); background-repeat:repeat-x; color:#ffffff; }
+
+/* Container */
+#container { width:760px; margin:0px auto; padding:0px 0px 18px 0px; text-align:left; }
+
+/* Main */
+#main { width:756px; padding:1px 1px 18px 1px; background-color:#ffffff; border:1px solid #bbbbbb; border-top:0px; text-align:left; }
+* html #main { width:760px; w\idth:756px; }
+html>body #main { margin-bottom:-1px; }
+*:first-child+html #main { margin-bottom:0px; }
+
+/* Footer */
+#footer { position:absolute; top:-1000px; left:-1000px; width:0px; height:0px; overflow:hidden; display:inline; }
+
+/* Headlines */
+#container h2 { margin:16px 18px 0px 18px; padding:8px 0px 7px 36px; background-image:url("images/install.gif"); background-position:left center; background-repeat:no-repeat; font-size:14px; color:#8ab858; }
+#container h2.important { margin:16px 18px 0px 18px; padding:7px 0px 8px 36px; background-image:url("images/important.gif"); background-position:left center; background-repeat:no-repeat; font-size:14px; font-weight:bold; color:#cc5555; }
+#container h3 { margin:24px 18px 0px 18px; padding:24px 0px 3px 0px; border-top:1px solid #dddddd; font-size:12px; font-weight:bold; }
+#container h3.no_border { padding-top:0px; border-top:0px; }
+#container h4 { margin:12px 0px 1px 0px; padding:0px; font-size:11px; font-weight:normal; }
+
+/* Paragraphs and lists */
+p { margin:0px 18px; padding:0px; line-height:16px; text-align:justify; }
+ul { margin:12px 0px; padding:0px 0px 0px 48px; }
+li { line-height:16px; }
+.code_old { margin:9px 18px; padding:6px 6px 7px 6px; border:1px solid #cc0000; background-color:#ffdddd; }
+.code_new { margin:9px 18px; padding:6px 6px 7px 6px; border:1px solid #00aa00; background-color:#ddffdd; }
+
+/* Form tables */
+#sql_table { margin:-3px 0px -3px 0px; }
+#sql_table pre label { font-family:Courier, monospace; }
+.tl_col_0 { padding:6px 0px 2px 0px; font-weight:bold; color:#8ab858; }
+.tl_col_1 { vertical-align:top; }
+.tl_col_2 { padding:2px 0px 3px 4px; }
+* html .tl_col_2 { padding:0px 0px 3px 4px; }
+*:first-child+html .tl_col_2 { padding:0px 0px 3px 4px; }
+
+/* Error messages */
+.tl_error { margin:0px 18px; padding:2px 0px 3px 20px; background-image:url("images/error.gif"); background-position:left center; background-repeat:no-repeat; color:#cc5555; }
+.tl_formbody .tl_error { margin:0px; }
+
+/* Confirmation messages */
+.tl_confirm { margin:0px 18px; padding:2px 0px 3px 20px; background-image:url("images/ok.gif"); background-position:left center; background-repeat:no-repeat; color:#8ab858; }
+.tl_info { margin:0px 18px; padding:2px 0px 3px 20px; background-image:url("images/show.gif"); background-position:left center; background-repeat:no-repeat; color:#5c9ac9; }
+#go_to_login { margin-top:18px; text-align:right; }
+#go_to_login a { padding:2px 0px 3px 20px; background-image:url("images/login.gif"); background-position:left center; background-repeat:no-repeat; }
+
+/* Formbody */
+.tl_formbody, .tl_formbody_submit { margin:0px 18px; }
+.tl_submit_container { margin-top:18px; }
+
+/* Text fields */
+.tl_text { margin:1px 0px 1px 0px; }
+* html .tl_text { margin:0px; }
+*:first-child+html .tl_text { margin:0px; }
+.tl_text { width:232px; }
+.tl_text { border:1px solid #b8b8b8; padding:2px; }
+.tl_text:focus { background-color:#ebfdd7; }
+
+/* Select menus */
+.tl_select { margin:1px 0px 1px 0px; }
+.tl_select { width:238px; }
+.tl_select { border:1px solid #b8b8b8; padding:1px; }
+
+/* Checkboxes */
+.tl_checkbox { margin:3px 3px 0px 1px; padding:0px; }
+* html .tl_checkbox { margin:-4px 0px 0px -3px; position:relative; top:1px; }
+*:first-child+html .tl_checkbox { margin:-4px 0px 0px -3px; position:relative; top:1px; }
+.tl_checkbox_container { margin:-2px 0px 1px 0px; }
+* html .tl_checkbox_container { margin:0px 0px -1px 0px; }
+*:first-child+html .tl_checkbox_container { margin:0px 0px -1px 0px; }
+
+/* Upload fields */
+.tl_upload_field { margin:1px 0px 1px 0px; }
+* html .tl_upload_field { margin:0px; }
+*:first-child+html .tl_upload_field { margin:0px; }

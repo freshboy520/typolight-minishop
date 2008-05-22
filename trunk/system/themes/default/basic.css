@@ -1,0 +1,38 @@
+/* TYPOlight basic back end CSS file */
+html, body { margin:0px; padding:0px; }
+
+/* Font family */
+a, b, body, cite, div, em, i, label, li, ol, p, strong, td, th, u, ul { font-family:Verdana, sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family:Verdana, sans-serif; }
+fieldset, form, input, optgroup, select, textarea { font-family:"Trebuchet MS", Verdana, sans-serif; }
+
+/* Font size and color */
+a, body, div, label, li, ol, p, td, th, ul { font-size:11px; color:#666966; }
+h1, h2, h3, h4, h5, h6 { font-size:12px; color:#666966; }
+fieldset, form, input, optgroup, select, textarea { font-size:11px; color:#666966; }
+* html div.mceColorPreview { /* TinyMCE fix */ font-size:0px; }
+.tl_small { font-size:9px; color:#a3a3a3; }
+.tl_gray { color:#a3a3a3; }
+
+/* Links */
+a { color:#666966; text-decoration:none; }
+a:hover { color:#8ab858; }
+
+/* Images */
+img { border:0px; }
+
+/* Clear */
+.clear { clear:both; height:0.1px; line-height:0.1px; font-size:0.1px; }
+.block, .tl_content { overflow:hidden; }
+
+/* Paragraphs */
+p { margin:0px 0px 12px 0px; padding:0px; }
+pre { margin:0px; padding:0px; }
+
+/* Forms */
+form { margin:0px; padding:0px; }
+optgroup { padding-top:3px; padding-bottom:3px; font-style:normal; }
+
+/* Acronyms and abbreviations */
+acronym { speak:normal; }
+abbr { speak:spell-out; }
